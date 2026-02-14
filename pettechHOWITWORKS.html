@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>How It Works | PawPair</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="./css/tailwind.js"></script>
+  <style>.cursor {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #0d9488;
+  border-radius: 50%;
+  position: sticky;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease;
+  z-index: 9999;
+}
+ /* ================= BUTTON EFFECT ================= */
+    .pet-btn {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.35s ease;
+    }
+
+    .pet-btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(255,255,255,0.4), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.5s ease;
+    }
+
+    .pet-btn:hover::before {
+      transform: translateX(100%);
+    }
+
+    .pet-btn:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+    /* ================= PAGE TRANSITION ================= */
+    .page-enter {
+      animation: pageIn 0.7s ease forwards;
+    }
+
+    @keyframes pageIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .page-exit {
+      animation: pageOut 0.4s ease forwards;
+    }
+
+    @keyframes pageOut {
+      to {
+        opacity: 0;
+        transform: scale(0.97);
+      }
+    }
+</style>
+
+</head>
+
+<body class="page-enter bg-gradient-to-br from-sky-50 via-white to-teal-50 text-gray-800">
+<div class="cursor"></div>
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur shadow-sm">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <h1 class="text-2xl font-bold text-teal-600">PawPair</h1>
+    <a href="./pettech.html"
+       class="pet-btn bg-teal-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-teal-700 transition">
+      Back to Home
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="reveal max-w-7xl mx-auto px-6 py-20 text-center bg-center bg-cover pet-btn" 
+      style="background-image: url('howitworksbGpic.png')">
+  <h2 class="text-5xl font-extrabold text-white mb-6 text-white[text-stroke:1px_grey] 
+    [-webkit-text-stroke:1px_grey] md:text-white[text-stroke:1px_grey] md:[-webkit-text-stroke:1px_grey]">
+    How PawPair Works
+  </h2>
+  <p class="text-lg md:text-xl font-normal md:font-semibold shadow-md text-white max-w-3xl mx-auto text-white[text-stroke:1px_grey] 
+    [-webkit-text-stroke:0.3px_grey md:text-white[text-stroke:0px_] md:[-webkit-text-stroke:0px]">
+    PawPair is designed to remove uncertainty from pet care by combining smart matching,
+    verified caregivers, and seamless booking  all in one trusted platform.
+  </p>
+</section>
+
+<!-- USER TYPES -->
+<section class="reveal max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12">
+
+  <!-- PET OWNERS -->
+  <div class="bg-white rounded-3xl p-10 shadow-xl">
+    <h3 class="text-3xl font-bold text-teal-600 mb-6">For Pet Owners</h3>
+
+    <div class="space-y-8">
+      <div>
+        <h4 class="text-xl font-semibold mb-2">1. Create Your Pet Profile</h4>
+        <p class="text-gray-600">
+          Share your pet’s breed, age, temperament, medical needs, feeding routine,
+          and personality traits to help us find the perfect caregiver match.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-xl font-semibold mb-2">2. Discover Trusted Caregivers</h4>
+        <p class="text-gray-600">
+          Browse verified caregivers with detailed bios, certifications, real reviews,
+          availability calendars, and transparent pricing.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-xl font-semibold mb-2">3. Secure Booking & Messaging</h4>
+        <p class="text-gray-600">
+          Chat safely within the platform, confirm availability, and book services
+          using secure, protected payments.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-xl font-semibold mb-2">4. Real-Time Updates</h4>
+        <p class="text-gray-600">
+          Receive live photo updates, activity logs, and check-ins so you always
+          know how your pet is doing.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAREGIVERS -->
+  <div class="bg-white rounded-3xl p-10 shadow-xl">
+    <h3 class="text-3xl font-bold text-teal-600 mb-6">For Caregivers</h3>
+
+    <div class="space-y-8">
+      <div>
+        <h4 class="text-xl font-semibold mb-2">1. Apply & Get Verified</h4>
+        <p class="text-gray-600">
+          Caregivers complete identity verification, background checks,
+          and experience validation to ensure platform safety.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-xl font-semibold mb-2">2. Set Your Services</h4>
+        <p class="text-gray-600">
+          Choose the services you offer — dog walking, sitting, boarding,
+          grooming, or training — and set your availability and rates.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-xl font-semibold mb-2">3. Get Matched & Paid</h4>
+        <p class="text-gray-600">
+          Receive booking requests from compatible pet owners and get paid
+          securely after successful service completion.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-xl font-semibold mb-2">4. Build Your Reputation</h4>
+        <p class="text-gray-600">
+          Earn reviews, ratings, and badges that increase trust and visibility
+          on the platform.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- TRUST & SAFETY -->
+<section class="reveal bg-teal-600 text-white py-20">
+  <div class="max-w-6xl mx-auto px-6">
+    <h3 class="text-4xl font-bold mb-10 text-center">
+      Trust & Safety First
+    </h3>
+
+    <div class="grid md:grid-cols-3 gap-10 text-center">
+      <div>
+        <h4 class="text-xl font-semibold mb-3">Verified Profiles</h4>
+        <p class="text-teal-100">
+          Every caregiver is screened to ensure authenticity, experience,
+          and reliability.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-xl font-semibold mb-3">Secure Payments</h4>
+        <p class="text-teal-100">
+          Payments are held safely until services are completed,
+          protecting both parties.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-xl font-semibold mb-3">24/7 Support</h4>
+        <p class="text-teal-100">
+          Our dedicated support team is always available to resolve
+          issues and ensure peace of mind.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY IT WORKS -->
+<section class="reveal max-w-6xl mx-auto px-6 py-20">
+  <h3 class="text-4xl font-bold text-center mb-12">
+    Why PawPair Works Better
+  </h3>
+
+  <div class="grid md:grid-cols-2 gap-12">
+    <div class="space-y-6">
+      <p class="text-gray-600">
+        PawPair removes friction from pet care by prioritizing compatibility,
+        transparency, and communication.
+      </p>
+      <p class="text-gray-600">
+        Unlike generic marketplaces, our UX is designed specifically around
+        pet behavior, owner anxiety, and caregiver workflows.
+      </p>
+    </div>
+
+    <ul class="space-y-4 font-medium">
+      <li>✔ Smart matching algorithms</li>
+      <li>✔ Clean, intuitive user flows</li>
+      <li>✔ Trust-driven visual design</li>
+      <li>✔ Scalable infrastructure</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="reveal bg-gradient-to-r from-teal-600 to-sky-500 text-white py-20 text-center">
+  <h4 class="text-3xl font-bold mb-4">
+    Pet care, reimagined.
+  </h4>
+  <p class="text-lg mb-8">
+    Join PawPair today and experience a safer, smarter way to care for pets.
+  </p>
+  <a href="index.html"
+     class="bg-white pet-btn text-teal-600 px-10 py-4 rounded-full font-semibold hover:bg-gray-100 transition">
+    Get Started
+  </a>
+</section>
+
+<footer class="text-center py-8 text-sm text-gray-500">
+  © 2026 PawPair. Designed for trust, built for love.
+</footer>
+<script src="./blogpage.js"></script>
+</body>
+</html>
+
+.

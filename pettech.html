@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PetCare Platform</title>
+  <script src="./css/tailwind.js"></script>
+
+ <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: hidden;
+      background: #f9fafb;
+    }
+
+    /* ================= SCROLL REVEAL ================= */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.9s ease;
+    }
+
+    .scroll-reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ================= BUTTON EFFECT ================= */
+    .pet-btn {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.35s ease;
+    }
+
+    .pet-btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(255,255,255,0.4), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.5s ease;
+    }
+
+    .pet-btn:hover::before {
+      transform: translateX(100%);
+    }
+
+    .pet-btn:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    /* ================= CUSTOM CURSOR ================= */
+    .custom-cursor {
+      width: 16px;
+      height: 16px;
+      border: 2px solid #0d9488;
+      border-radius: 50%;
+      position:sticky;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.15s ease, background 0.3s ease;
+    }
+
+    .cursor-active {
+      transform: translate(-50%, -50%) scale(1.6);
+      background: rgba(189, 202, 194, 0.2);
+    }
+
+    /* ================= PAGE TRANSITION ================= */
+    .page-enter {
+      animation: pageIn 0.7s ease forwards;
+    }
+
+    @keyframes pageIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .page-exit {
+      animation: pageOut 0.4s ease forwards;
+    }
+
+    @keyframes pageOut {
+      to {
+        opacity: 0;
+        transform: scale(0.97);
+      }
+    }
+    /* MOBILE NAV */
+.mobile-menu{
+max-height:0;
+overflow:hidden;
+transition:max-height .4s ease;
+}
+.mobile-menu.open{max-height:300px;}
+
+  </style>
+
+  
+</head>
+
+
+
+
+<body class="page-enter  bg-[#F9FAFB] text-gray-800 overflow-x: hidden;
+  transition: background-color 0.6s ease, color 0.6s ease;">
+<div class="custom-cursor"></div>
+<!-- NAVBAR -->
+<header class="bg-white shadow-sm sticky top-0 z-50 ">
+  <div class="max-w-7xl mx-auto px-6 py-4  flex justify-between items-center ">
+    <h1 class="text-2xl font-bold text-teal-600">PawPair</h1>
+    <nav class="hidden md:flex space-x-20 font-medium">
+      <a href="./pettechservice.html" class="hover:text-teal-600 pet-btn ">Services</a>
+      <a href="./pettechHOWITWORKS.html" class="hover:text-teal-600 pet-btn ">How it Works</a>
+      <a href="./pettechBlog.html" class="hover:text-teal-600 pet-btn">Blog</a>
+      <a href="./pettechCONTACT.html" class="hover:text-teal-600 pet-btn ">Contact</a>
+    </nav>
+   <!-- mobile button -->
+<button id="menuBtn" class="md:hidden text-2xl">☰</button>
+
+<button class="hidden md:block bg-teal-600 pet-btn text-white px-5 py-2 rounded-full hover:bg-teal-700">
+Get Started
+</button>
+</div>
+
+<!-- mobile nav -->
+<div id="mobileMenu" class="mobile-menu md:hidden bg-white px-6 pb-0 space-y-3">
+<a href="./pettechservice.html" class="block">Services</a>
+<a href="./pettechHOWITWORKS.html" class="block">How it Works</a>
+<a href="./pettechBlog.html" class="block">Blog</a>
+<a href="./pettechCONTACT.html" class="block">Contact</a>
+<button class="bg-teal-600 text-white w-full py-2 rounded-full">Get Started</button>
+</div>
+
+</header>
+
+<!-- HERO SECTION -->
+<section class="  scroll-reveal bg-gradient-to-r from-teal-500 to-blue-400  text-white shadow-lg ">
+  <div class="max-w-8xl mx-auto  me- py-4 px-3 sm:py-16 md:py-0 md:pe-0 grid md:grid-cols-2 gap-34 items-center scroll-reveal ">
+    <div class=" pe-30 ps-10 ">
+      <h2 class="text-3xl md:text-5xl font-bold leading-tight pt-6 md ">
+        Trusted Care for Your Pets,<br> Anytime, Anywhere
+      </h2>
+      <p class="mt-6 text-lg opacity-90">
+        Find verified caregivers, book services, and keep your pets safe with our smart pet-care platform.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 mb-5">
+        <button class="pet-btn bg-white text-teal-600 px-6 py-3 rounded-full font-semibold  style=bachground">
+          Find a Caregiver
+        </button>
+        <button class=" pet-btn  border-white px-6 py-3 rounded-full hover:bg-white hover:text-teal-600">
+          Become a Caregiver
+        </button>
+      </div>
+    </div>
+
+    <div class="hidden md:block ">
+      <img src="./Happy Golden Retriever in the park.png" class="h-111 pet-btn w-150 rounded me-0 py-0 pe-0 r" alt="Happy pet" class="rounded-3xl shadow-xl">
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="py-20 mt-2 bg-cover bg-center  scroll-reveal shadow-2xl pet-btn" style="background-image: url('refreshedpetbackgroungimg.png');"
+>
+  <div class="max-w-7xl mx-auto px-6 text-white">
+    <h3 class="text-3xl font-bold text-center mb-12 text-white[text-stroke:1px_grey] 
+    [-webkit-text-stroke:1px_grey] md:text-white[text-stroke:0px_white] md:[-webkit-text-stroke:0px_white] scroll-reveal ">Our Services</h3>
+
+    <div class="grid md:grid-cols-4 gap-8">
+      <div class="bg-white p-6 rounded-full shadow hover:shadow-lg text-center scroll-reveal bg-gradient-to-r from-teal-500 to-blue-300 rounded-lg">
+        <h4 class="font-semibold text-lg mt-4">Dog Walking</h4>
+        <p class="text-white mt-2">Reliable walks for happy, healthy pets.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-full shadow hover:shadow-lg text-center scroll-reveal bg-gradient-to-r from-teal-500 to-blue-300 rounded-lg">
+        <h4 class="font-semibold text-lg mt-4">Pet Sitting</h4>
+        <p class="text-white mt-2">In-home care while you're away.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-full shadow hover:shadow-lg text-center scroll-reveal bg-gradient-to-r from-teal-500 to-blue-200 rounded-lg">
+        <h4 class="font-semibold text-lg mt-4">Grooming</h4>
+        <p class="text-white mt-2">Professional grooming services.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-full shadow hover:shadow-lg text-center scroll-reveal bg-gradient-to-r from-teal-500 to-blue-300 rounded-lg">
+        <h4 class="font-semibold text-lg mt-4">Tele-Vet</h4>
+        <p class="text-white mt-2">Online health consultations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST SECTION -->
+<section class="bg-teal-50   scroll-reveal py-20  bg-center bg-cover bg-gradient-to-r from-teal-500 to-blue-400 shadow-lg"
+ >
+  
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    
+    <h3 class="text-3xl font-bold mb-10 text-white scroll-reveal ">Why Pet Owners Trust Us</h3>
+
+    <div class="grid md:grid-cols-3 gap-13">
+      <div class="p-6  bg-gradient-to-r from-teal-600 to-blue-400 rounded-lg scroll-reveal shadow-lg">
+        <h4 class="font-semibold text-lg text-white">Verified Caregivers</h4>
+        <p class="text-white  font-boldmt-2">Background-checked and reviewed.</p>
+      </div>
+      <div class="p-6 bg-gradient-to-r  from-blue-500 to-teal-500 rounded-lg scroll-reveal shadow-lg">
+        <h4 class="font-semibold text-lg text-white">Secure Payments</h4>
+        <p class="text-white font-bold mt-2">Safe, transparent transactions.</p>
+      </div>
+      <div class="p-6 bg-gradient-to-r from-teal-500 to-blue-500 rounded-lg scroll-reveal shadow-lg">
+        <h4 class="font-semibold text-lg text-white">24/7 Support</h4>
+        <p class="text-white font-bold mt-2">We’re always here to help.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="py-  scroll-reveal ">
+  <div class="maxbg-gradient-to-r from-teal-500 to-blue-500 text-white mx-auto px-6 bg-center bg-cover pet-btn" 
+      style="background-image: url('create account sharp button.png')">
+    <h3 class="text-3xl font-bold text-center mb-12 pt-10 scroll-reveal text-white[text-stroke:1px_grey] 
+    [-webkit-text-stroke:1px_grey] md:text-white[text-stroke:0px_white] md:[-webkit-text-stroke:0px_white]"">How It Works</h3>
+
+    <div class="grid md:grid-cols-4 gap-6 text-center pb-10">
+      <div class="bg-white p-3 rounded-xl scroll-reveal shadow bg-center bg-cover bg-gradient-to-r from-teal-400 to-blue-500 text-white mb-4" 
+      >
+        <span class="text-white ">1</span>
+        <p class="mt-2 font-bold text-xl ">Create an account</p>
+      </div>
+      <div class="bg-white scroll-reveal p-6 rounded-xl shadow bg-gradient-to-r from-teal-500 to-blue-400 text-white mb-4">
+        <span class="text-white">2</span>
+        <p class="mt-2 font-bold text-xl">Find a caregiver</p>
+      </div>
+      <div class="bg-white scroll-reveal p-6 rounded-xl shadow bg-gradient-to-r from-teal-500 to-blue-400 text-white mb-4">
+        <span class="text-white">3</span>
+        <p class="mt-2 font-bold text-xl">Book & chat</p>
+      </div>
+      <div class="bg-white scroll-reveal  p-6 rounded-xl shadow bg-gradient-to-r from-teal-500 to-blue-500 text-white mb-4">
+        <span class="text-white">4</span>
+        <p class="mt-2 font-bold text-xl bg">Enjoy peace of mind</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class=" scroll-reveal  bg-gradient-to-r from-teal-600 to-blue-400 text-white py-20 text-center bg-cover bg-center shadow-lg"  >
+  
+  
+  <h3 class="text-4xl font-bold">Your Pet Deserves the Best Care</h3>
+  <p class="mt-4 opacity-90">Join thousands of pet owners who trust us daily.</p>
+  <button class="pet-btn mt-8 bg-white text-teal-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100">
+    
+    Get Started Today
+  </button>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-gray-300 py-10  scroll-reveal shadow-lg">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h4 class="text-xl font-bold text-white">PetCare</h4>
+    <p class="mt-4 text-sm">© 2026 PetCare. All rights reserved.</p>
+  </div>
+  <!-- JavaScript LAST -->
+  <script src="./Main.js"></script>
+  <script>/* MOBILE MENU */
+menuBtn.onclick=()=>mobileMenu.classList.toggle("open");
+</script></script>
+</body>
+
+</html>

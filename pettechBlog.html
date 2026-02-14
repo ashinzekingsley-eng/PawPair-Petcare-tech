@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Blog & Insights | PawPair</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="./css/tailwind.js"></script>
+<style>.cursor {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #0d9488;
+  border-radius: 50%;
+  position: sticky;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease;
+  z-index: 9999;
+}
+ /* ================= BUTTON EFFECT ================= */
+    .pet-btn {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.35s ease;
+    }
+
+    .pet-btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(255,255,255,0.4), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.5s ease;
+    }
+
+    .pet-btn:hover::before {
+      transform: translateX(100%);
+    }
+
+    .pet-btn:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+    /* ================= PAGE TRANSITION ================= */
+    .page-enter {
+      animation: pageIn 0.7s ease forwards;
+    }
+
+    @keyframes pageIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .page-exit {
+      animation: pageOut 0.4s ease forwards;
+    }
+
+    @keyframes pageOut {
+      to {
+        opacity: 0;
+        transform: scale(0.97);
+      }
+    }
+</style>
+
+  
+</head>
+
+
+<body class=" page-enter bg-gradient-to-br from-sky-50 via-white to-teal-50 text-gray-800">
+<div class="cursor"></div>
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur shadow-sm">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <h1 class="text-2xl font-bold text-teal-600">PawPair</h1>
+    <a href="./pettech.html"
+       class="bg-teal-600 pet-btn text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-teal-700 transition">
+      Back to Home
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class=" reveal max-w-8xl ms- me- px-6 py-20 text-center bg-gradient-to-r from-teal-500 to-blue-200 text-white">
+  <h2 class="text-5xl font-extrabold text-gray-900 mb-6 ">
+    Blog & Insights
+  </h2>
+  <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+    Expert tips, pet care guides, safety insights, and product updates — all designed
+    to help you make better decisions for your pet’s wellbeing.
+  </p>
+</section> </section>
+
+<!-- CATEGORIES -->
+<section class="max-w-6xl mx-auto px-6  pt-6 mb-16 ">
+  <div class="flex flex-wrap gap-4 justify-center">
+    <span class="px-5 py-2 bg-teal-600 text-white rounded-full text-sm font-medium">All</span>
+    <span class="px-5 py-2 bg-white shadow rounded-full text-sm">Pet Care</span>
+    <span class="px-5 py-2 bg-white shadow rounded-full text-sm">Training</span>
+    <span class="px-5 py-2 bg-white shadow rounded-full text-sm">Health & Safety</span>
+    <span class="px-5 py-2 bg-white shadow rounded-full text-sm">Platform Updates</span>
+  </div>
+</section>
+
+<!-- FEATURED POST -->
+ 
+<section class="reveal max-w-8xl mx-auto px-6 mb-24">
+  <div class="bg-white rounded-3xl shadow-xl overflow-hidden grid md:grid-cols-2">
+    
+    <div class="p-10 flex flex-col justify-center">
+      <span class="text-sm uppercase text-teal-600 font-semibold mb-3">
+        Featured Article
+      </span>
+      <h3 class="text-3xl font-bold mb-4">
+        How to Choose the Right Caregiver for Your Dog
+      </h3>
+      <p class="text-gray-600 mb-6">
+        Finding a caregiver isn’t just about availability — it’s about trust,
+        compatibility, and understanding your pet’s unique needs.
+      </p>
+
+      <div class="flex items-center justify-between">
+        <div class="text-sm text-gray-500">
+          By PawPair Team · 5 min read
+        </div>
+        <a href="#" class="pet-btn text-teal-600 font-semibold hover:underline">
+          Read More →
+        </a>
+      </div>
+    </div>
+
+    <div class="bg-gradient-to-br from-teal-400 to-sky-500 flex items-center justify-center text-white text-xl font-semibold pet-btn">
+      <img src="./happypet and its owner blog pag.png" alt="">
+    </div>
+
+  </div>
+</section> </section>
+
+<!-- BLOG GRID -->
+<section class="reveal max-w-7xl mx-auto px-6 pb-24">
+  <h3 class="text-4xl font-bold mb-12 text-center">
+    Latest Articles
+  </h3>
+
+  <div class="grid md:grid-cols-3 gap-10">
+
+    <!-- BLOG CARD -->
+
+ 
+    <article class=" bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-xl transition pet-btn">
+      <div class="h-48 bg-sky-200 flex items-center justify-center font-semibold">
+        <img src="./pet care picture.png" class="h-50 w-97 pet-btn" alt="">
+      </div>
+      <div class="p-6 space-y-4">
+        <span class="text-xs uppercase text-teal-600 font-semibold pt-4">Pet Care</span>
+        <h4 class="text-xl font-bold">
+          Daily Routines That Keep Dogs Happy
+        </h4>
+        <p class="text-gray-600 text-sm">
+          Learn how structured routines improve behavior, health, and trust in dogs.
+        </p>
+        <div class="flex justify-between text-sm text-gray-500">
+          <span>4 min read</span>
+          <a href="#" class="pet-btn text-teal-600 font-medium hover:underline">Read →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-xl transition pet-btn">
+      <div class="h-48 bg-teal-200 flex items-center justify-center font-semibold">
+       <img src="./pet training picture.jpeg" class="h-50 w-97 pet-btn" alt="">
+      </div>
+      <div class="p-6 space-y-4">
+        <span class="text-xs uppercase text-teal-600 font-semibold">Safety</span>
+        <h4 class="text-xl font-bold">
+          How PawPair Keeps Pets Safe
+        </h4>
+        <p class="text-gray-600 text-sm">
+          From verification to secure payments, see how safety is built into our platform.
+        </p>
+        <div class="flex justify-between text-sm text-gray-500">
+          <span>6 min read</span>
+          <a href="#" class="pet-btn text-teal-600 font-medium hover:underline">Read →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-xl transition pet-btn">
+      <div class="h-48 bg-sky-300 flex items-center justify-center font-semibold">
+        <img src="./pet safety picture.jpeg" class="h-50 w-97 pet-btn" alt="">
+      </div>
+      <div class="p-6 space-y-4">
+        <span class="text-xs uppercase text-teal-600 font-semibold">Training</span>
+        <h4 class="text-xl font-bold">
+          Understanding Dog Behavior
+        </h4>
+        <p class="text-gray-600 text-sm">
+          Behavioral cues every pet owner should recognize to improve communication.
+        </p>
+        <div class="flex justify-between text-sm text-gray-500">
+          <span>5 min read</span>
+          <a href="#" class="pet-btn text-teal-600 font-medium hover:underline">Read →</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="reveal bg-gradient-to-r from-teal-600 to-teal-300 text-white py-20">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h4 class="text-3xl font-bold mb-4">
+      Stay Updated
+    </h4>
+    <p class="text-teal-100 mb-8">
+      Get expert pet care tips, safety updates, and product news delivered to your inbox.
+    </p>
+
+    <form class="flex flex-col sm:flex-row gap-4 justify-center">
+      <input
+        type="email"
+        placeholder="Enter your email"
+        class="px-6 py-4 rounded-full text-white w-full sm:w-96 focus:outline-none"
+      />
+      <button
+        type="submit"
+        class="bg-white pet-btn text-teal-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition">
+        Subscribe
+      </button>
+    </form>
+  </div>
+</section> </section>
+
+<!-- FOOTER -->
+<footer class="text-center py-8 text-sm text-gray-500">
+  © 2026 PawPair. Knowledge built on trust and care.
+</footer>
+<script src="./blogpage.js"></script>
+</body>
+</html>

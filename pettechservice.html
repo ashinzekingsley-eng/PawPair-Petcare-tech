@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Services | PawPair</title>
+  <script src="./css/tailwind.js"></script>
+  <style>.cursor {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #0d9488;
+  border-radius: 50%;
+  position: sticky;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease;
+  z-index: 9999;
+}
+ /* ================= BUTTON EFFECT ================= */
+    .pet-btn {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.35s ease;
+    }
+
+    .pet-btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(255,255,255,0.4), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.5s ease;
+    }
+
+    .pet-btn:hover::before {
+      transform: translateX(100%);
+    }
+
+    .pet-btn:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+    /* ================= PAGE TRANSITION ================= */
+    .page-enter {
+      animation: pageIn 0.7s ease forwards;
+    }
+
+    @keyframes pageIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .page-exit {
+      animation: pageOut 0.4s ease forwards;
+    }
+
+    @keyframes pageOut {
+      to {
+        opacity: 0;
+        transform: scale(0.97);
+      }
+    }
+</style>
+</head>
+
+<body class="page-enter bg-[#F9FAFB] text-gray-800">
+<div class="cursor"></div>
+<!-- FIXED BACK TO HOME BUTTON -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur shadow-sm bg-gradient-to-r from-teal-500 to-blue-500">
+  <div class="max-w-7xl md:mx-auto me-1 md:px-6 ps-4 pe- py-4 flex md:items-center justify-between">
+    <h1 class="text-2xl font-bold text-white pt-2">PawPair</h1>
+<a href="./pettech.html"
+   class="pet-btn fixed top- right-6 z-50 bg-white mt-2  text-teal-600 px-5 py-2 rounded-full font-semibold shadow-lg hover:bg-teal-50 transition">
+  ← Back to Home
+</a></div></header>
+
+<!-- HERO -->
+<section class="reval bg-gradient-to-r from-teal-500 to-blue-500 text-white shadow-lg bg-center bg-cover pet-btn" 
+      style="background-image: url('howitworksbGpic.png')">
+  <div class="max-w-7xl mx-auto px-6 py-20 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold  text-white[text-stroke:1px_grey] 
+    [-webkit-text-stroke:1px_grey] md:text-white[text-stroke:1px_grey] md:[-webkit-text-stroke:1px_grey]">
+      Caring Services Your Pets Will Love
+    </h1>
+    <p class="mt-4 text-lg opacity-90 max-w-2xl mx-auto font-semibold text-opacity-0  ">
+      From trusted caregivers to smart pet tech, we provide safe, reliable,
+      and loving services for every pet.
+    </p>
+  </div>
+</section>
+
+<!-- SERVICES GRID -->
+<section class=" reveal py-20 bg-gradient-to-r from-teal-500 to-blue-500 text-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-14">
+      Our Pet Care Services
+    </h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <div class="bg-white rounded-3xl shadow-lg p-8 hover:shadow-xl transition">
+        <div class="h-14 w-14 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 text-2xl mb-6">
+          🐕
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Dog Walking</h3>
+        <p class="text-gray-600">
+          Reliable daily walks with trusted caregivers to keep your dog happy and active.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-3xl shadow-lg p-8 hover:shadow-xl transition">
+        <div class="h-14 w-14 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-2xl mb-6">
+          🏠
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Pet Sitting</h3>
+        <p class="text-gray-600">
+          Loving in-home care that keeps your pet comfortable while you’re away.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-3xl shadow-lg p-8 hover:shadow-xl transition">
+        <div class="h-14 w-14 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 text-2xl mb-6">
+          ✂️
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Grooming</h3>
+        <p class="text-gray-600">
+          Professional grooming services for a clean, healthy, and happy pet.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-3xl shadow-lg p-8 hover:shadow-xl transition">
+        <div class="h-14 w-14 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-2xl mb-6">
+          🩺
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Tele-Vet Care</h3>
+        <p class="text-gray-600">
+          Instant access to certified veterinarians from the comfort of your home.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY OUR SERVICES -->
+<section class="reveal bg-teal-50 py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+
+      <div>
+        <h2 class="text-3xl font-bold mb-6">
+          Why Pet Owners Choose Our Services
+        </h2>
+        <p class="text-gray-600 mb-6">
+          We combine technology with compassion to deliver services you can trust.
+          Every caregiver is verified, every booking is secure, and your pet’s safety
+          always comes first.
+        </p>
+
+        <ul class="space-y-4 text-gray-700">
+          <li>✔ Verified and reviewed caregivers</li>
+          <li>✔ Secure booking & payments</li>
+          <li>✔ 24/7 customer support</li>
+          <li>✔ Real-time updates and tracking</li>
+        </ul>
+      </div>
+
+      <div class="bg-gradient-to-br from-teal-500 to-blue-500 rounded-3xl p-10 text-white shadow-lg">
+        <h3 class="text-2xl font-semibold mb-4">Smart Pet Technology</h3>
+        <p class="opacity-90">
+          Our platform uses smart tools to ensure transparency, safety, and peace
+          of mind at every stage of your pet care journey.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="reveal bg-gradient-to-r from-blue-500 to-teal-500 text-white py-20 text-center">
+  <h2 class="text-4xl font-bold">
+    Ready to Book Trusted Pet Care?
+  </h2>
+  <p class="mt-4 opacity-90">
+    Join thousands of pet owners who rely on us every day.
+  </p>
+  <button class="pet-btn mt-8 bg-white text-teal-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100">
+    Book a Service
+  </button>
+</section>
+
+<!-- FOOTER -->
+<footer class="reveal bg-gray-900 text-gray-300 py-10">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h4 class="text-xl font-bold text-white">PetCare</h4>
+    <p class="mt-4 text-sm">© 2026 PetCare. All rights reserved.</p>
+  </div>
+</footer>
+<script src="./blogpage.js"></script>
+</body>
+</html>
+

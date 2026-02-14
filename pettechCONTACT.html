@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Us | PawPair</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="./css/tailwind.js"></script>
+  <style>.cursor {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #0d9488;
+  border-radius: 50%;
+  position: sticky;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease;
+  z-index: 9999;
+}
+ /* ================= BUTTON EFFECT ================= */
+    .pet-btn {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.35s ease;
+    }
+
+    .pet-btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(255,255,255,0.4), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.5s ease;
+    }
+
+    .pet-btn:hover::before {
+      transform: translateX(100%);
+    }
+
+    .pet-btn:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+
+<body class="bg-gradient-to-br from-sky-50 via-white to-teal-50 text-gray-800">
+<div class="cursor"></div>
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur shadow-sm">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <h1 class="text-2xl font-bold text-teal-600">PawPair</h1>
+    <a href="./pettech.html"
+       class="bg-teal-600 pet-btn text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-teal-700 transition">
+      Back to Home
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="max-w-8xl mx-auto px-6 py-20 text-center text-white bg-center bg-cover pet-btn" 
+      style="background-image: url('howitworksbGpic.png')">>
+  <h2 class="text-5xl font-extrabold text-white mb-6 [text-stroke:0.2px_teal] 
+    [-webkit-text-stroke:1px_grey] md:text-white[text-stroke:1px_grey] md:[-webkit-text-stroke:1px_grey]">
+    Get in Touch
+  </h2>
+  <p class="text-xl text-white [text-stroke:1px_grey] 
+    [-webkit-text-stroke:0.3px_grey] md:text-white[text-stroke:0px_] md:[-webkit-text-stroke:0px] font-semibold max-w-3xl mx-auto ">
+    Whether you have questions about pet care, need support, or want to partner with us —
+    our team is always happy to hear from you.
+  </p>
+</section>
+
+<!-- CONTACT CONTENT -->
+<section class="max-w-8xl mx-auto px-6 pb-24 mt-20">
+  <div class="grid lg:grid-cols-2 gap-16">
+
+    <!-- LEFT INFO -->
+    <div class="space-y-10">
+      <div>
+        <h3 class="text-3xl font-bold mb-4">We’re Here for You & Your Pet 🐶</h3>
+        <p class="text-gray-600 leading-relaxed">
+          PawPair is built on trust, safety, and genuine care. Our support team is available
+          to guide pet parents, caregivers, and partners every step of the way.
+        </p>
+      </div>
+
+      <!-- CONTACT CARDS -->
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="bg-white rounded-2xl shadow-lg p-6">
+          <h4 class="font-bold text-lg mb-2">📧 Email Us</h4>
+          <p class="text-gray-600 text-sm">
+            support@pawpair.com<br>
+            partnerships@pawpair.com
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-6">
+          <h4 class="font-bold text-lg mb-2">📞 Call Us</h4>
+          <p class="text-gray-600 text-sm">
+            +1 (555) 123-4567<br>
+            Mon – Fri, 9am – 6pm
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-6">
+          <h4 class="font-bold text-lg mb-2">📍 Location</h4>
+          <p class="text-gray-600 text-sm">
+            San Francisco, California<br>
+            United States
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-6">
+          <h4 class="font-bold text-lg mb-2">🛡 Trust & Safety</h4>
+          <p class="text-gray-600 text-sm">
+            Verified caregivers, secure payments, and 24/7 assistance.
+          </p>
+        </div>
+      </div>
+
+      <!-- SOCIAL -->
+      <div>
+        <h4 class="font-bold text-lg mb-4">Follow Us</h4>
+        <div class="flex gap-4">
+          <span class="pet-btn bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm">Instagram</span>
+          <span class="pet-btn bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm">Twitter</span>
+          <span class="pet-btn bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm">LinkedIn</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT FORM -->
+    <div class="bg-white rounded-3xl shadow-2xl p-10">
+      <h3 class="text-3xl font-bold mb-6">Send Us a Message</h3>
+
+      <form class="space-y-6">
+        <div>
+          <label class="block text-sm font-medium mb-2">Full Name</label>
+          <input type="text"
+                 placeholder="Your name"
+                 class="w-full px-5 py-4 rounded-xl border focus:ring-2 focus:ring-teal-500 outline-none" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-2">Email Address</label>
+          <input type="email"
+                 placeholder="you@email.com"
+                 class="w-full px-5 py-4 rounded-xl border focus:ring-2 focus:ring-teal-500 outline-none" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-2">Subject</label>
+          <select
+            class="w-full px-5 py-4 rounded-xl border focus:ring-2 focus:ring-teal-500 outline-none">
+            <option>General Inquiry</option>
+            <option>Pet Care Support</option>
+            <option>Partnership</option>
+            <option>Technical Issue</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-2">Message</label>
+          <textarea rows="5"
+                    placeholder="Tell us how we can help..."
+                    class="w-full px-5 py-4 rounded-xl border focus:ring-2 focus:ring-teal-500 outline-none"></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="pet-btn w-full bg-teal-600 text-white py-4 rounded-full font-semibold text-lg hover:bg-teal-700 transition">
+          Send Message
+        </button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section class="bg-gradient-to-r from-teal-600 to-sky-500 text-white py-16">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+    <h4 class="text-3xl font-bold mb-4">
+      Your Pet’s Happiness Starts Here
+    </h4>
+    <p class="text-teal-100 mb-6">
+      Reach out today and let us help you find the perfect care solution.
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="text-center py-8 text-sm text-gray-500">
+  © 2026 PawPair. Built with care, trust, and love for pets.
+</footer>
+<script src="./blogpage.js"></script>
+</body>
+</html>
